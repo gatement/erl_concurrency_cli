@@ -9,5 +9,6 @@ ebin
 *.swp
 sys.config
 run.sh
+run.bat
 erl_crash.dump
 var
