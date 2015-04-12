@@ -10,3 +10,4 @@ ebin
 sys.config
 run.sh
 erl_crash.dump
+var
