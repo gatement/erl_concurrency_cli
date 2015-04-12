@@ -1,0 +1,14 @@
+{application, erl_concurrency_cli,
+ [
+  {description, "Erlang concurrency test - client"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { erl_concurrency_cli_app, []}},
+  {env, [
+      {init_tcp_listener_count, 10}
+  ]}
+ ]}.

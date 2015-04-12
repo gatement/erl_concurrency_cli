@@ -1,0 +1,12 @@
+.eunit
+.rebar
+.DS_Store
+deps
+ebin
+*.o
+*.beam
+*.plt
+*.swp
+sys.config
+run.sh
+erl_crash.dump

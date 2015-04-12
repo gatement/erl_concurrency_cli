@@ -1,0 +1,43 @@
+[
+    {erl_concurrency_ser, [
+        {init_tcp_listener_count, 10}
+    ]},
+    {lager, [
+        {crash_log, "./var/log/crash.log"},
+        {crash_log_msg_size, 65536},
+        {crash_log_size, 1048576000},
+        {crash_log_date, "$D0"},
+        {crash_log_count, 3},
+        {error_logger_redirect, false},
+
+        {async_threshold, 20},
+        {async_threshold_window, 5},
+
+        %% log level: debug, info, notice, warning, error, critical, alert, emergency 
+
+        {handlers, [
+            {lager_console_backend, debug},
+            {lager_file_backend, [
+                {file, "./var/log/debug.log"},
+                {level, debug},
+                {size, 1048576000},
+                {date, "$D0"},
+                {count, 3}
+                ]},
+            {lager_file_backend, [
+                {file, "./var/log/info.log"},
+                {level, info},
+                {size, 1048576000},
+                {date, "$D0"},
+                {count, 3}
+                ]},
+            {lager_file_backend, [
+                {file, "./var/log/warning.log"},
+                {level, warning},
+                {size, 1048576000},
+                {date, "$D0"},
+                {count, 3}
+                ]}
+            ]}
+    ]}
+].
