@@ -14,7 +14,7 @@
       
       {client_count, 10},
 
-      {verbose, true}
+      {verbose, false}
     ]},
     {lager, [
         {crash_log, "./var/log/crash.log"},
