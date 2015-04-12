@@ -79,9 +79,9 @@ write_log_inner(RespTime) ->
 		true ->
             case RespTime of
                 timeout ->
-                    ?LOG_DEBUG("log [~s]: ~p", [At, RespTime]);
+                    ?LOG_DEBUG("log [~p]: ~p", [At, RespTime]);
                 _ ->
-                    ?LOG_DEBUG("log [~s]: ~p macrosecs", [At, RespTime])
+                    ?LOG_DEBUG("log [~p]: ~p macrosecs", [At, RespTime])
             end;
         _ ->
             continue

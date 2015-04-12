@@ -85,8 +85,8 @@ code_change(_OldVsn, State, _Extra) ->
 %% ===================================================================
 %% Local Functions
 %% ===================================================================
-handle_received_data(<<>>, _) ->
-    ok;
+handle_received_data(<<>>, State) ->
+    State;
 
 handle_received_data(<<_Byte1:1/binary, Rest/binary>>, #state{is_waiting_resp = true, cmd_sent_time = CmdSentTime} = State) ->
     %% log response time
@@ -96,6 +96,7 @@ handle_received_data(<<_Byte1:1/binary, Rest/binary>>, #state{is_waiting_resp = 
     handle_received_data(Rest, State#state{is_waiting_resp = false});
 
 handle_received_data(<<_Byte1:1/binary, Rest/binary>>, #state{is_waiting_resp = false} = State) ->
+    %% ignore the data
     handle_received_data(Rest, State).
 
 epoch_microseconds() ->
