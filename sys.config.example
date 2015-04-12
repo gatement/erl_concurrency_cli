@@ -1,6 +1,20 @@
 [
-    {erl_concurrency_ser, [
-        {init_tcp_listener_count, 10}
+    {mnesia, [
+        {dir, "./var/mnesia/cli01@local.com"},
+        {dc_dump_limit, 40},
+        {dump_log_write_threshold, 1000}
+    ]},
+    {erl_concurrency_cli, [
+      {host, "localhost"},
+      {port, 10000},
+
+      {interval_online, 200},       % interval in milliseconds for clients to get online
+      {interval_reconnect, 10000},  % interval in milliseconds for clients to reconnect
+      {interval_heartbeat, 600000}, % interval in milliseconds for clients to do heartbeat
+      
+      {client_count, 10},
+
+      {verbose, true}
     ]},
     {lager, [
         {crash_log, "./var/log/crash.log"},

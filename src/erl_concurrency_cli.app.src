@@ -9,6 +9,15 @@
                  ]},
   {mod, { erl_concurrency_cli_app, []}},
   {env, [
-      {init_tcp_listener_count, 10}
+      {host, "localhost"},
+      {port, 10000},
+
+      {interval_online, 200},       % interval in milliseconds for clients to get online
+      {interval_reconnect, 10000},  % interval in milliseconds for clients to reconnect
+      {interval_heartbeat, 600000}, % interval in milliseconds for clients to do heartbeat
+      
+      {client_count, 10},
+
+      {verbose, false}
   ]}
  ]}.

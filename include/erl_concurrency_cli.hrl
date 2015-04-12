@@ -1,4 +1,4 @@
-%-record(log, {id, at, resp_time}).
+-record(log, {id, at, resp_time}).
 
 %% lager
 -define(LOG_DEBUG(Msg, Args), lager:debug(Msg, Args)).

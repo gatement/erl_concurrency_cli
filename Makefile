@@ -6,7 +6,7 @@ compile:
 	@$(REBAR) get-deps compile
 
 run: compile
-	@erl -name ser01@local.com -pa deps/*/ebin ./ebin -config sys -s erl_concurrency_ser
+	@erl -name cli01@local.com -pa deps/*/ebin ./ebin -config sys -s erl_concurrency_cli
 
 eunit: compile
 	@$(REBAR) eunit

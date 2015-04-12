@@ -1,4 +1,4 @@
--module(erl_concurrency_ser_app).
+-module(erl_concurrency_cli_app).
 
 -behaviour(application).
 
@@ -10,7 +10,7 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-    erl_concurrency_ser_sup:start_link().
+    erl_concurrency_cli_sup:start_link().
 
 stop(_State) ->
     ok.
