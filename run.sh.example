@@ -1,7 +1,7 @@
 #!/bin/sh
 BASE_DIR=/Users/gatement/app/erl_concurrency_cli
 NODE_NAME=cli01@local.com
-erl +P 1000000 +Q 1000000 +K true -pa ${BASE_DIR}/deps/*/ebin ${BASE_DIR}/ebin \
+erl +P 100000000 +Q 100000000 +K true -pa ${BASE_DIR}/deps/*/ebin ${BASE_DIR}/ebin \
     -config ${BASE_DIR}/sys \
     -name ${NODE_NAME} \
     -detached \
