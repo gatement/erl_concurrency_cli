@@ -12,12 +12,12 @@
       {host, "localhost"},
       {port, 10000},
 
-      {interval_online, 200},       % interval in milliseconds for clients to get online
+      {interval_online, 5},       % interval in milliseconds for clients to get online
       {interval_reconnect, 10000},  % interval in milliseconds for clients to reconnect
       {interval_heartbeat, 600000}, % interval in milliseconds for clients to do heartbeat, max 600000
       
       {client_count, 10},
 
-      {verbose, false}
+      {verbose, true}
   ]}
  ]}.
