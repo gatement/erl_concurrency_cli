@@ -13,8 +13,6 @@ start() ->
     lager:start(),
     application:start(erl_concurrency_cli),
 
-    model_log:clear(),
-
     erl_concurrency_cli_server:start_test(),
 
     ok.
