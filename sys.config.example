@@ -5,7 +5,7 @@
         {dump_log_write_threshold, 1000}
     ]},
     {erl_concurrency_cli, [
-      {host, "localhost"},
+      {server, "localhost"},
       {port, 10000},
       {local_ip, {0,0,0,0}},
 
