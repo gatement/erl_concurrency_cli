@@ -7,6 +7,7 @@
     {erl_concurrency_cli, [
       {host, "localhost"},
       {port, 10000},
+      {local_ip, {0,0,0,0}},
 
       {interval_online, 5},       % interval in milliseconds for clients to get online
       {interval_reconnect, 10000},  % interval in milliseconds for clients to reconnect

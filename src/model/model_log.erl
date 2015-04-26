@@ -63,7 +63,7 @@ timeout_count() ->
 
 info() ->
     [
-     {count, ?MODULE:count()},
+     {none_timeout_count, ?MODULE:count()},
      {min, ?MODULE:min()},
      {max, ?MODULE:max()},
      {avg, ?MODULE:avg()},

@@ -46,9 +46,10 @@ handle_info({tcp_closed, _Socket}, State) ->
 
 %% connect server
 handle_info(timeout, #state{socket = undefined, heartbeat_interval = HeartbeatInterval} = State) ->
-	{ok, Host} = application:get_env(host),
+	{ok, Server} = application:get_env(server),
 	{ok, Port} = application:get_env(port),
-    {ok, Socket} = gen_tcp:connect(Host, Port, [binary, {active, true}, {reuseaddr, true}]),
+	{ok, LocalIp} = application:get_env(local_ip),
+    {ok, Socket} = gen_tcp:connect(Server, Port, [binary, {ip, LocalIp}, {active, true}, {reuseaddr, true}]),
 
     {noreply, State#state{socket = Socket}, HeartbeatInterval};
 
